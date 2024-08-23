@@ -202,7 +202,7 @@ nav ul li a:hover
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
 .left_section_2{
   display: flex;
@@ -210,7 +210,7 @@ nav ul li a:hover
   justify-content: center;
   align-items: center;
   width: 40%;
-  border: 3px solid blue;
+  /*border: 3px solid blue;*/
 }
 .left_section_2 figure{
   width: 100%;
@@ -233,5 +233,5 @@ nav ul li a:hover
   gap: 50px;
   font-size: 20px;
   width: 60%;
-  border: 1px solid green;
+  /*border: 1px solid green;*/
 }
