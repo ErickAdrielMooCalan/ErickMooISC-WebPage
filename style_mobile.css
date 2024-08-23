@@ -1,13 +1,13 @@
 @media screen and (max-width: 480px) {
 
-    :root {
-        --primary-color: #DF711A;
-        --secondary-claro: #FFB73F;
-        --tertiary-color: #FCE49C;
-        --quaternary-color: #64C9CF;
-        --body-color: #F9F9F9;
+    :root{
+        --primary-color: #0077AA;
+        --secondary-claro: #3BB4F4;
+        --tertiary-color: #F1DF3A;
+        --quaternary-color: #BDBDBD;
+        --body-color: #F6F6F6;
         --black-color: #202022;
-    }
+      }
 
     .menu_nav {
         max-height: 0;
@@ -54,5 +54,12 @@
         padding: 15px;
         margin: 0;
         border-bottom: 2px dotted var(--black-color);
+    }
+
+    .section_1{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
     }
 }
