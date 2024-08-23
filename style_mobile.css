@@ -9,6 +9,10 @@
         --black-color: #202022;
       }
 
+    header{
+        padding: 0;
+    }
+
     .menu_nav {
         max-height: 0;
         opacity: 0;

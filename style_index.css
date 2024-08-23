@@ -39,13 +39,15 @@ header{
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  border: 2px solid red;
+  /*border: 2px solid red;*/
   position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: var(--body-color);
 }
 
 .area_left {
-  border: 2px solid green;
+  /*border: 2px solid green;*/
 }
 .area_left figure {
   max-width: 60px;
@@ -62,7 +64,7 @@ header{
   font-weight: 600;
   font-style: normal;
   font-size: 20px;
-  border: 2px solid purple;
+  /*border: 2px solid purple;*/
 }
 .menu_nav ul{
   list-style: none;
