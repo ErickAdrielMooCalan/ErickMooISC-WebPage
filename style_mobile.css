@@ -22,7 +22,6 @@
         background-color: var(--body-color);
         z-index: 1000;
     }
-
     .menu_button {
         display: block; /* Show menu button */
         color: var(--black-color);
@@ -32,23 +31,19 @@
         cursor: pointer;
         padding: 10px;
     }
-
     .menu_nav.active {
         max-height: 300px;
         opacity: 1;
         visibility: visible;
     }
-
     .menu_nav ul {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
-
     .menu_nav ul li {
         width: 100%;
     }
-
     .menu_nav ul li a {
         display: block;
         padding: 15px;

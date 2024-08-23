@@ -10,6 +10,7 @@
   --quaternary-color: #BDBDBD;
   --body-color: #F6F6F6;
   --black-color: #202022;
+  --button_red-color: #ff4048;
 }
 
 *{
@@ -152,7 +153,7 @@ nav ul li a:hover
   justify-content: center;
   gap: 20px;
   width: 300px;
-  height: auto;
+  height: 350px;
   padding: 30px;
   box-sizing: border-box;
   background-color: var(--quaternary-color);
@@ -161,12 +162,18 @@ nav ul li a:hover
 .skill_title{
   font-size: 23px;
   font-weight: 500;
-
 }
 .skill_info{
   font-size: 20px;
 }
 .skill_container_icon{
   font-size: 70px;
-
+}
+.button_see_more{
+  display: inline-block;
+  padding: 5px 25px;
+  background-color: var(--button_red-color);
+  text-decoration: none;
+  color: var(--body-color);
+  font-size: 20px;
 }
