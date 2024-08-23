@@ -8,6 +8,7 @@
   --secondary-claro: #3BB4F4;
   --tertiary-color: #F1DF3A;
   --quaternary-color: #BDBDBD;
+  --aditional_gray-color: #727272;
   --body-color: #F6F6F6;
   --black-color: #202022;
   --button_red-color: #ff4048;
@@ -148,7 +149,7 @@ nav ul li a:hover
   gap: 100px;
   flex-wrap: wrap;
   padding: 30px;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
 .main_skill_container{
   display: flex;
@@ -160,12 +161,14 @@ nav ul li a:hover
   height: 350px;
   padding: 30px;
   box-sizing: border-box;
+  border-radius: 15px;
   background-color: var(--quaternary-color);
+  border: 1px solid var(--aditional_gray-color);
   transition: all 0.5s;
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
 }
 .main_skill_container:hover{
-  box-shadow: 0px 0px 30px var(--black-color);
+  box-shadow: 0px 0px 35px var(--black-color);
 }
 .skill_title{
   font-size: 23px;
@@ -181,8 +184,9 @@ nav ul li a:hover
   display: inline-block;
   padding: 5px 25px;
   background-color: var(--button_red-color);
-  text-decoration: none;
   color: var(--body-color);
+  text-decoration: none;
+  border-radius: 50px;
   font-size: 20px;
   transition: all 0.5s;
 }
