@@ -74,10 +74,7 @@
     .section_2{
         flex-direction: column;
     }
-    .left_section_2{
-        width: 100%;
-    }
-    .right_section_2{
+    .left_section_2, .right_section_2 {
         width: 100%;
     }
     .left_section_2 figure img{
@@ -85,5 +82,24 @@
         object-fit: cover;
         object-position: center;
         /*border: 3px solid green;*/
-      }
+    }
+
+    .section_3{
+        flex-direction: column;
+    }
+    .right_section_3{
+        order: 1;
+    }
+    .left_section_3{
+        order: 2;
+    }
+    .left_section_3, .right_section_3 {
+        width: 100%;
+    }
+    .right_section_2 figure img{
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+        /*border: 3px solid green;*/
+    }
 }
