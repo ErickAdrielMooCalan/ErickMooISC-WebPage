@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='style_index.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style_mobile.css'>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src='https://kit.fontawesome.com/2ee0245f3d.js' crossorigin='anonymous'></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="wow.min.js"></script>
+
+    <!-- Splide librarie -->
+    <link rel="stylesheet" href="libraries/splide-4.1.3/dist/css/splide.min.css">
+    <script src="libraries/splide-4.1.3/dist/js/splide.min.js"></script>
+
+</head>
+<body>
+    <header class="main_width">
+
+        <div class="area_left">
+            <figure>
+                <a href=""> <img src="images/logos/LogoPage.png" alt=""> </a>
+            </figure>
+        </div>
+
+        <div class="area_right">
+            <nav class="menu_nav">
+                <ul>
+                    <li> <a href=" ">Home</a> </li>
+                    <li> <a href=" ">Work history</a> </li>
+                    <li> <a href=" ">Contact Me</a> </li>
+                    <li> <a href=" ">About Me</a> </li>
+                    <li> <a href=" "> <i class="fa-solid fa-key"></i> Login (Admin) </a> </li>
+                </ul>
+            </nav>
+
+            <button id="menu_button" class="menu_button">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+    </header>
+
+    <section class="slider_main">
+        <div class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide"> <img src="images/content/slide_1.jpg" alt=""> </li>
+                  <li class="splide__slide"> <img src="images/content/slide_2.jpg" alt=""> </li>
+                  <li class="splide__slide"> <img src="images/content/slide_3.jpg" alt=""> </li>
+                </ul>
+              </div>
+        </div>
+
+    </section>
+
+</body>
+
+<script>
+    document.querySelector('.menu_button').addEventListener('click', function() {
+    document.querySelector('.menu_nav').classList.toggle('active');
+    });
+
+    var splide = new Splide( '.splide', {type: 'loop', autoplay: false, interval: '2000'} );
+    splide.mount();
+</script>
+
+</html>
