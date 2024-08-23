@@ -23,10 +23,11 @@ body {
   font-style: normal;
   font-size: 30px;
   color: var(--black-color);
+  background-color: var(--body-color);
   text-align: center;
 }
 .main_width{
-  max-width: 100%px;
+  max-width: 100%;
   margin: auto;
   text-align: center;
 }
@@ -121,5 +122,49 @@ nav ul li a:hover
   box-sizing: border-box;
   text-align: center;
   background: rgba(0, 0, 0, 0.7);
-  color: white;
+  color: var(--body-color);
+}
+
+.main_title_container{
+  background-color: var(--black-color);
+  height: auto;
+}
+.main_title{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--body-color);
+}
+
+.section_1{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid red;
+}
+.main_skill_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 300px;
+  height: auto;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: var(--quaternary-color);
+  border: 1px solid blue;
+}
+.skill_title{
+  font-size: 23px;
+  font-weight: 400;
+
+}
+.skill_info{
+  font-size: 20px;
+}
+.skill_container_icon{
+  font-size: 70px;
+
 }
