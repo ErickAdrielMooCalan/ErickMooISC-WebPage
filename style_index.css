@@ -312,3 +312,29 @@ nav ul li a:hover
   width: 60%;
   /*border: 1px solid green;*/
 }
+
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: var(--black-color);
+  color: var(--body-color);
+  padding: 5px;
+}
+footer figure {
+  max-width: 40px;
+  margin: 0;
+}
+footer figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.text_footer{
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 17px;
+}
