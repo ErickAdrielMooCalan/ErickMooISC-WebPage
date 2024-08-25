@@ -114,6 +114,13 @@ nav ul li a:hover
   object-position: bottom;
   cursor: pointer;
 }
+.splide__slide video {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
 .text_on_slide {
   position: absolute;
   display: flex;
