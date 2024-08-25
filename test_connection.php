@@ -12,9 +12,9 @@
     $conn = pg_connect($conn_str);
 
     if ($conn) {
-        echo "Conexión exitosa!";
+        echo "Successful connection";
     } else {
-        echo "Error en la conexión.";
+        echo "Connection error";
     }
 
     // Close connection
