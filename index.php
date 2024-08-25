@@ -21,31 +21,8 @@
 
 </head>
 <body>
-    <header class="main_width">
 
-        <div class="area_left">
-            <figure>
-                <a href=""> <img src="images/logos/Logo_ErickMoo_1.png" alt=""> </a>
-            </figure>
-        </div>
-
-        <div class="area_right">
-            <nav class="menu_nav">
-                <ul>
-                    <li> <a href=" ">Home</a> </li>
-                    <li> <a href=" ">Work history</a> </li>
-                    <li> <a href=" ">Contact Me</a> </li>
-                    <li> <a href=" ">About Me</a> </li>
-                    <li> <a href=" "> <i class="fa-solid fa-key"></i> Login (Admin) </a> </li>
-                </ul>
-            </nav>
-
-            <button id="menu_button" class="menu_button">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-
-    </header>
+<?php include 'include/header.php'; ?>
 
     <section class="slider_main">
         <div class="splide">
@@ -191,14 +168,7 @@
     </section>
 </body>
 
-<footer class="main_width">
-    <figure>
-        <img src="images/logos/Logo_ErickMoo_2.png" alt="">
-    </figure>
-
-    <p class="text_footer">Erick Moo ISC | 2024</p>
-
-</footer>
+<?php include 'include/footer.php'; ?>
 
 <script>
     new WOW().init();
