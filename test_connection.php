@@ -5,10 +5,10 @@
     $user = "postgres.wwbjmorkfpbpnlmrcyas";
     $password = "9@A!4z$3#pK1B?8&2*Q7";
 
-    // Cadena de conexión
+    // Connection string
     $conn_str = "host=$host port=$port dbname=$dbname user=$user password=$password";
 
-    // Conectarse a PostgreSQL
+    // Connection to PostgreSQL
     $conn = pg_connect($conn_str);
 
     if ($conn) {
