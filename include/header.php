@@ -13,7 +13,7 @@
                 <li> <a href=" ">Work history</a> </li>
                 <li> <a href=" ">Contact Me</a> </li>
                 <li> <a href=" ">About Me</a> </li>
-                <li> <a href="login.html"> <i class="fa-solid fa-key"></i> Login (Admin) </a> </li>
+                <li> <a href="login.php"> <i class="fa-solid fa-key"></i> Login (Admin) </a> </li>
             </ul>
         </nav>
 
