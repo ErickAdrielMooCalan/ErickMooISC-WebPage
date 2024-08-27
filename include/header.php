@@ -2,14 +2,14 @@
 
     <div class="area_left">
         <figure>
-            <a href=""> <img src="images/logos/Logo_ErickMoo_1.png" alt=""> </a>
+            <a href="index.php"> <img src="images/logos/Logo_ErickMoo_1.png" alt=""> </a>
         </figure>
     </div>
 
     <div class="area_right">
         <nav class="menu_nav">
             <ul>
-                <li> <a href=" ">Home</a> </li>
+                <li> <a href="index.php">Home</a> </li>
                 <li> <a href=" ">Work history</a> </li>
                 <li> <a href=" ">Contact Me</a> </li>
                 <li> <a href=" ">About Me</a> </li>
