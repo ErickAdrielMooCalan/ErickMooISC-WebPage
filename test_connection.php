@@ -16,7 +16,4 @@
     } else {
         echo "Connection error";
     }
-
-    // Close connection
-    pg_close($conn);
 ?>
