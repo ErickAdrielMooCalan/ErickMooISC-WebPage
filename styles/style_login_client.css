@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Texts*/
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
+
+:root{
+  --primary-color: #0077AA;
+  --secondary-claro: #3BB4F4;
+  --tertiary-color: #F1DF3A;
+  --quaternary-color: #BDBDBD;
+  --aditional_gray-color: #727272;
+  --aditional_gray-color_high: #4b4b4b;
+  --body-color: #F6F6F6;
+  --black-color: #202022;
+  --button_red-color: #ff4048;
+  --button_green-color: #00d660;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Moderustic", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 30px;
+  color: var(--black-color);
+  background-color: var(--body-color);
+  text-align: center;
+}
+.main_width{
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /*border: 2px solid red;*/
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: var(--body-color);
+}
+
+.area_left {
+  /*border: 2px solid green;*/
+  background-color: var(--body-color);
+}
+.area_left figure {
+  max-width: 60px;
+  margin: 0;
+}
+.area_left figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.area_right{
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  /*border: 2px solid purple;*/
+}
+.menu_nav ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.menu_nav ul li a
+{
+  text-decoration: none;
+  color: var(--black-color);
+  display: block;
+  padding: 15px 10px;
+  margin-right: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.4s;
+}
+nav ul li a:hover
+{
+    border-bottom: 2px solid var(--black-color);
+    padding-bottom: 5px;
+}
+.menu_button{
+  display: none; /* Hide menu button */
+}
+
+.section_1_login_client{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--aditional_gray-color_high);
+    padding: 30px;
+    height: 480px;
+}
+.form_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    width: 340px;
+    height: 500px;
+    border-radius: 25px;
+    background-color: var(--aditional_gray-color);
+    border: 3px solid var(--quaternary-color);
+    padding: 20px;
+}
+.icons_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+.key_user_icon{
+    color: var(--body-color);
+    font-size: 50px;
+}
+.login_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    /* border: 3px solid red; */
+    box-sizing: border-box; /* Ensures that padding does not affect the overall width */
+}
+.form_group{
+    display: flex;
+    flex-direction: column;
+}
+.form_group label{
+    margin-bottom: 5px;
+    color: var(--black-color);
+    font-size: 20px;
+    font-weight: 600;
+}
+.form_group input {
+    padding: 10px;
+    width: 280px;
+    border-radius: 5px;
+}
+.login_client_buttom{
+    display: inline-block;
+    padding: 8px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+    min-width: 100px;
+    cursor: pointer;
+    color: var(--body-color);
+    background-color: var(--primary-color);
+    transition: all 0.5s;
+}
+.login_client_buttom:hover{
+    background-color: var(--body-color);
+    color: var(--black-color);
+    font-weight: 500;
+}
+
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: var(--black-color);
+    color: var(--body-color);
+    padding: 5px;
+  }
+  footer figure {
+    max-width: 40px;
+    margin: 0;
+  }
+  footer figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .text_footer{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 17px;
+  }
