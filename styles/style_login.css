@@ -119,7 +119,8 @@ nav ul li a:hover
   padding-left: 100px;
   padding-right: 100px;
   border-radius: 25px;
-  background-color: #727272;
+  background-color: var(--aditional_gray-color);
+  border: 3px solid var(--quaternary-color);
 }
 .icon_user_type{
   color: var(--body-color);
