@@ -33,6 +33,12 @@
 
                 <button type="submit" class="login_client_buttom">Login</button>
             </form>
+
+            <div class="info_create_client">
+                <p>Create a totally free account now</p>
+                <a href="" class="create_client_buttom">Sign up</a>
+
+            </div>
         </div>
     </section>
 

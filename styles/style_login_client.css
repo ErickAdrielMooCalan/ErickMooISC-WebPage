@@ -112,7 +112,7 @@ nav ul li a:hover
     gap: 30px;
     background-color: var(--aditional_gray-color_high);
     padding: 30px;
-    height: 480px;
+    height: 515px;
 }
 .form_container {
     display: flex;
@@ -183,6 +183,39 @@ nav ul li a:hover
     background-color: var(--body-color);
     color: var(--black-color);
     font-weight: 500;
+}
+.info_create_client{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+.info_create_client p{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+.create_client_buttom{
+  display: inline-block;
+  padding: 6px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  min-width: 110px;
+  color: var(--body-color);
+  background-color: var(--button_green-color);
+  transition: all 0.5s;
+}
+.create_client_buttom:hover{
+  background-color: var(--body-color);
+  color: var(--black-color);
+  font-weight: 800;
 }
 
 
