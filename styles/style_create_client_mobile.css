@@ -1,0 +1,58 @@
+@media screen and (max-width: 480px) {
+
+    :root{
+        --primary-color: #0077AA;
+        --secondary-claro: #3BB4F4;
+        --tertiary-color: #F1DF3A;
+        --quaternary-color: #BDBDBD;
+        --body-color: #F6F6F6;
+        --black-color: #202022;
+      }
+
+    header{
+        padding: 0;
+    }
+
+    .menu_nav {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--body-color);
+        z-index: 1000;
+    }
+    .menu_button {
+        display: block; /* Show menu button */
+        color: var(--black-color);
+        background-color: var(--body-color);
+        border: none;
+        font-size: 35px;
+        cursor: pointer;
+        padding: 10px;
+    }
+    .menu_nav.active {
+        max-height: 300px;
+        opacity: 1;
+        visibility: visible;
+    }
+    .menu_nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .menu_nav ul li {
+        width: 100%;
+    }
+    .menu_nav ul li a {
+        display: block;
+        padding: 15px;
+        margin: 0;
+        border-bottom: 2px dotted var(--black-color);
+    }
+
+}

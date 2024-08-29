@@ -25,6 +25,7 @@ CREATE TABLE admin_details (
 CREATE TABLE client_details (
     id_client UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     type_service VARCHAR(50),
+    company VARCHAR(100),
     fk_id_user UUID NOT NULL UNIQUE,
     FOREIGN KEY (fk_id_user) REFERENCES users(id_user)
 );

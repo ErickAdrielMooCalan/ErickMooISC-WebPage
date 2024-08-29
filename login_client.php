@@ -23,7 +23,6 @@
                 <div class="form_group">
                     <label for="email_client">Email</label>
                     <input type="email" id="email_client" name="email_client" required placeholder="Type your email">
-
                 </div>
 
                 <div class="form_group">
@@ -36,7 +35,7 @@
 
             <div class="info_create_client">
                 <p>Create a totally free account now</p>
-                <a href="" class="create_client_buttom">Sign up</a>
+                <a href="create_client.php" class="create_client_buttom">Sign up</a>
 
             </div>
         </div>
