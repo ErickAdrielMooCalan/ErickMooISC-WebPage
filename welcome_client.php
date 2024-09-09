@@ -1,13 +1,13 @@
 <?php
-session_start(); // Inicia la sesión
+session_start(); // start session
 
-// Verifica si el usuario está autenticado
+// Check if the user is authenticated
 if (!isset($_SESSION['user_client'])) {
     header("Location: login_client.php"); // Redirige al usuario a la página de inicio de sesión si no está autenticado
     exit();
 }
 
-// Recupera los datos del usuario de la sesión
+// Retrieve user data from the session
 $user_client = $_SESSION['user_client'];
 ?>
 
@@ -16,7 +16,7 @@ $user_client = $_SESSION['user_client'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Bienvenido</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,8 +31,8 @@ $user_client = $_SESSION['user_client'];
 </head>
 <body>
     <div class="welcome-message">
-        <p>Welcome, <?php echo htmlspecialchars($user_client['first_name']); ?> <?php echo htmlspecialchars($user_client['second_name']); ?> <?php echo htmlspecialchars($user_client['last_names']); ?>!</p>
-        <p>Your age is: <?php echo htmlspecialchars($user_client['age']); ?></p>
+        <p>Bienvenido: <?php echo htmlspecialchars($user_client['first_name']); ?> <?php echo htmlspecialchars($user_client['second_name']); ?> <?php echo htmlspecialchars($user_client['last_names']); ?>!</p>
+        <p>Tu edad es: <?php echo htmlspecialchars($user_client['age']); ?></p>
     </div>
 </body>
 </html>

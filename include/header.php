@@ -9,11 +9,11 @@
     <div class="area_right">
         <nav class="menu_nav">
             <ul>
-                <li> <a href="index.php">Home</a> </li>
-                <li> <a href=" ">Work history</a> </li>
-                <li> <a href=" ">Contact Me</a> </li>
-                <li> <a href=" ">About Me</a> </li>
-                <li> <a href="login.php"> <i class="fa-solid fa-key"></i> Login (Admin) </a> </li>
+                <li> <a href="index.php">Inicio</a> </li>
+                <li> <a href=" ">Historial de trabajo</a> </li>
+                <li> <a href=" ">Contáctame</a> </li>
+                <li> <a href=" ">Sobre mí</a> </li>
+                <li> <a href="login.php"> <i class="fa-solid fa-key"></i> Iniciar sesión</a> </li>
             </ul>
         </nav>
 

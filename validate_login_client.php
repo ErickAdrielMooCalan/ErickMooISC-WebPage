@@ -32,22 +32,22 @@
                     }
                     else{
                         // Incorrect password
-                        echo "<script>alert('Incorrect password.'); window.location.href = 'login_client.php';</script>";
+                        echo "<script>alert('Contraseña incorrecta'); window.location.href = 'login_client.php';</script>";
                     }
                 }
                 else{
                     // Access denied for non-clients
-                    echo "<script>alert('Access denied. Only clients can log in.'); window.location.href = 'login_client.php';</script>";
+                    echo "<script>alert('Acceso denegado, solo clientes pueden iniciar sesión'); window.location.href = 'login_client.php';</script>";
                 }
             }
             else{
                 // User not found
-                echo "<script>alert('User not found.'); window.location.href = 'login_client.php';</script>";
+                echo "<script>alert('Usuario no encontrado'); window.location.href = 'login_client.php';</script>";
             }
         }
         else{
             // Database connection error
-            echo "<script>alert('Database connection error.'); window.location.href = 'login_client.php';</script>";
+            echo "<script>alert('Error de conexión con la base de datos'); window.location.href = 'login_client.php';</script>";
         }
 
         // Close the connection

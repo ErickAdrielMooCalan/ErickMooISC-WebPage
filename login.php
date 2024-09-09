@@ -12,8 +12,8 @@
     <section class="main_width section_1_login">
         <div class="buttoms_login_container">
             <i class="fa-solid fa-users icon_user_type"></i>
-            <a href="login_client.php" class="client_buttom">Client</a>
-            <a href="" class="admin_buttom">Administrator</a>
+            <a href="login_client.php" class="client_buttom">Cliente</a>
+            <a href="" class="admin_buttom">Administrador</a>
         </div>
 
 

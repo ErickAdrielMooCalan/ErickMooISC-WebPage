@@ -7,7 +7,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Client</title>
+    <title>Iniciar sesión como cliente</title>
 </head>
 <body>
     <?php include 'include/header.php';?>
@@ -21,21 +21,21 @@
 
             <form action="validate_login_client.php" method="POST" class="login_form">
                 <div class="form_group">
-                    <label for="email_client">Email</label>
-                    <input type="email" id="email_client" name="email_client" required placeholder="Type your email">
+                    <label for="email_client">Correo</label>
+                    <input type="email" id="email_client" name="email_client" required placeholder="Escribe tu correo electrónico">
                 </div>
 
                 <div class="form_group">
-                    <label for="password_client">Password</label>
-                    <input type="password" id="password_client" name="password_client" required placeholder="Type your password">
+                    <label for="password_client">Contraseña</label>
+                    <input type="password" id="password_client" name="password_client" required placeholder="Escribe tu contraseña">
                 </div>
 
-                <button type="submit" class="login_client_buttom">Login</button>
+                <button type="submit" class="login_client_buttom">Ingresar</button>
             </form>
 
             <div class="info_create_client">
-                <p>Create a totally free account now</p>
-                <a href="create_client.php" class="create_client_buttom">Sign up</a>
+                <p>Crea una cuenta totalmente gratis</p>
+                <a href="create_client.php" class="create_client_buttom">Regístrate</a>
 
             </div>
         </div>
