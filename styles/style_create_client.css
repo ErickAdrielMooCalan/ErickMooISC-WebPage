@@ -119,14 +119,15 @@ nav ul li a:hover
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: left;
     gap: 30px;
-    width: 340px;
-    height: 500px;
+    width: auto;
+    height: auto;
     border-radius: 25px;
     background-color: var(--aditional_gray-color);
     border: 3px solid var(--quaternary-color);
-    padding: 20px;
+    padding: 50px;
+    /*border: 3px solid green;*/
 }
 .icons_container{
     display: flex;
@@ -138,7 +139,54 @@ nav ul li a:hover
 }
 .create_new_client{
     color: var(--body-color);
-    font-size: 50px;
+    font-size: 40px;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+  box-sizing: border-box; /* Ensures that padding does not affect the overall width */
+  /*border: 3px solid red;*/
+}
+.form_group{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  /*border: 3px solid blue;*/
+}
+.form_group label{
+  font-family: "Moderustic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--black-color);
+  font-size: 16px;
+}
+.form_group input {
+  padding: 5px;
+  width: 250px;
+  border-radius: 5px;
+}
+.register_client_buttom{
+  display: inline-block;
+  padding: 6px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  min-width: 110px;
+  color: var(--body-color);
+  background-color: var(--button_green-color);
+  transition: all 0.5s;
+}
+.register_client_buttom:hover{
+  background-color: var(--body-color);
+  color: var(--black-color);
 }
 
 

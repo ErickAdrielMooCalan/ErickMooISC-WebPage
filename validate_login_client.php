@@ -19,7 +19,7 @@
                 $user_client = pg_fetch_assoc($result_client);
 
                 // Check if the user is a client
-                if ($user_client['fk_id_user_type'] === '319fc478-7452-4049-b9ef-ce52350a22ca'){
+                if ($user_client['fk_id_user_type'] === 'a1261531-fec8-4a4d-8f6b-bed7a47031ab'){
                     // Check if the password is correct
                     if ($user_client['password'] === $password_client){
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <?php include 'include/head.php';?>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/style_create_client.css'>
@@ -7,7 +7,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a account</title>
+    <title>Regístrate</title>
 </head>
 <body>
     <?php include 'include/header.php';?>
@@ -18,13 +18,43 @@
                 <i class="fa-solid fa-user-plus create_new_client"></i>
             </div>
 
-            <form action="validate_create_client.php" method="POST" class="login_form">
+            <form action="validate_create_client.php" method="POST" enctype="multipart/form-data" class="login_form">
 
+                <div class="form_group">
+                    <label for="first_name">Primer nombre</label>
+                    <input type="text" name="first_name" required>
+
+                    <label for="second_name">Segundo nombre</label>
+                    <input type="text" name="second_name">
+
+                    <label for="last_names">Apellidos</label>
+                    <input type="text" name="last_names" required>
+
+                    <label for="age">Edad</label>
+                    <input type="number" name="age" required>
+                </div>
+
+                <div class="form_group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" name="email" required>
+
+                    <label for="phone">Teléfono</label>
+                    <input type="text" name="phone" pattern="\d{10}" required title="Debe ser un número de 10 dígitos">
+
+                    <label for="profile_image">Imagen de perfil</label>
+                    <input type="file" name="profile_image" accept="image/*">
+
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" required>
+                </div>
+
+                <div class="form_group">
+                    <button type="submit" class="register_client_buttom">Registrar</button>
+                </div>
             </form>
         </div>
 
     </section>
-
 </body>
 
 <script>

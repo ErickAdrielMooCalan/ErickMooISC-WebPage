@@ -1,3 +1,9 @@
+
+CREATE TABLE user_types (
+    id_user_type UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    user_type_name VARCHAR(50) NOT NULL
+);
+
 CREATE TABLE users(
     id_user UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     first_name VARCHAR(50) NOT NULL,
@@ -5,15 +11,13 @@ CREATE TABLE users(
     last_names VARCHAR(50) NOT NULL,
     age INT,
     email VARCHAR(100) NOT NULL,
+    phone VARCHAR(10),
+    profile_image VARCHAR(255),
     password VARCHAR(50) NOT NULL,
     fk_id_user_type UUID NOT NULL,
     FOREIGN KEY (fk_id_user_type) REFERENCES user_types(id_user_type)
 );
 
-CREATE TABLE user_types (
-    id_user_type UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_type_name VARCHAR(50) NOT NULL
-);
 
 CREATE TABLE admin_details (
     id_admin UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -44,3 +48,11 @@ CREATE TABLE admin_company_rel (
     FOREIGN KEY (fk_id_admin) REFERENCES admin_details(id_admin),
     FOREIGN KEY (fk_id_company) REFERENCES company(id_company)
 );
+
+--admin test
+insert into users (first_name, second_name, last_names, age, email, password, fk_id_user_type)
+values ('Sergio', 'Augusto', 'Pérez Sánchez', 35, 'sergioaugustopz@gmail.com', 'lapvr4553', 'dbb2cf39-7ca6-46c3-839b-9d96c99d984d');
+
+--client test
+insert into users (first_name, second_name, last_names, age, email, password, fk_id_user_type)
+values ('Josue', 'Antonio', 'Ek Canche', 27, 'josueantonioec@gmail.com', 'kfscf8788', '319fc478-7452-4049-b9ef-ce52350a22ca');
