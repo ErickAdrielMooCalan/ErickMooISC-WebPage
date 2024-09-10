@@ -3,7 +3,7 @@ session_start(); // start session
 
 // Check if the user is authenticated
 if (!isset($_SESSION['user_client'])) {
-    header("Location: login_client.php"); // Redirige al usuario a la página de inicio de sesión si no está autenticado
+    header("Location: client-login"); // Redirige al usuario a la página de inicio de sesión si no está autenticado
     exit();
 }
 
@@ -12,7 +12,7 @@ $user_client = $_SESSION['user_client'];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

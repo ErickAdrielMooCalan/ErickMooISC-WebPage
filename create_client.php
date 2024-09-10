@@ -18,7 +18,7 @@
                 <i class="fa-solid fa-user-plus create_new_client"></i>
             </div>
 
-            <form action="validate_create_client.php" method="POST" enctype="multipart/form-data" class="login_form">
+            <form action="validate-register-client" method="POST" enctype="multipart/form-data" class="login_form">
 
                 <div class="form_group">
                     <label for="first_name">Primer nombre</label>

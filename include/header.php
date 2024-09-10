@@ -2,18 +2,18 @@
 
     <div class="area_left">
         <figure>
-            <a href="index.php"> <img src="images/logos/Logo_ErickMoo_1.png" alt=""> </a>
+            <a href="home"> <img src="images/logos/Logo_ErickMoo_1.png" alt=""> </a>
         </figure>
     </div>
 
     <div class="area_right">
         <nav class="menu_nav">
             <ul>
-                <li> <a href="index.php">Inicio</a> </li>
+                <li> <a href="home">Inicio</a> </li>
                 <li> <a href=" ">Historial de trabajo</a> </li>
                 <li> <a href=" ">Contáctame</a> </li>
                 <li> <a href=" ">Sobre mí</a> </li>
-                <li> <a href="login.php"> <i class="fa-solid fa-key"></i> Iniciar sesión</a> </li>
+                <li> <a href="login"> <i class="fa-solid fa-key"></i> Iniciar sesión</a> </li>
             </ul>
         </nav>
 

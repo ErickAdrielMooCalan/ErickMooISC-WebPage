@@ -25,27 +25,27 @@
                         $_SESSION['user_client'] = $user_client;
 
                         // Redirect the user to "welcome_client.php"
-                        header("Location: welcome_client.php");
+                        header("Location: client-welcome");
                         exit();
                     }
                     else{
                         // Incorrect password
-                        echo "<script>alert('Contraseña incorrecta'); window.location.href = 'login_client.php';</script>";
+                        echo "<script>alert('Contraseña incorrecta'); window.location.href = 'client-login';</script>";
                     }
                 }
                 else{
                     // Access denied for non-clients
-                    echo "<script>alert('Acceso denegado, solo clientes pueden iniciar sesión'); window.location.href = 'login_client.php';</script>";
+                    echo "<script>alert('Acceso denegado, solo clientes pueden iniciar sesión'); window.location.href = 'client-login';</script>";
                 }
             }
             else{
                 // User not found
-                echo "<script>alert('Usuario no encontrado'); window.location.href = 'login_client.php';</script>";
+                echo "<script>alert('Usuario no encontrado'); window.location.href = 'client-login';</script>";
             }
         }
         else{
             // Database connection error
-            echo "<script>alert('Error de conexión con la base de datos'); window.location.href = 'login_client.php';</script>";
+            echo "<script>alert('Error de conexión con la base de datos'); window.location.href = 'client-login';</script>";
         }
 
         // Close the connection
@@ -53,6 +53,6 @@
     }
     else{
         // Missing fields
-        echo "<script>alert('Por favor complete todos los campos.'); window.location.href = 'login_client.php';</script>";
+        echo "<script>alert('Por favor complete todos los campos.'); window.location.href = 'client-login';</script>";
     }
 ?>

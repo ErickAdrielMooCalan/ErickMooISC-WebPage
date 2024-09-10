@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <?php include 'include/head.php'; ?>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/style_index.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/style_index_mobile.css'>
-    <title>Welcome to Erick Moo ISC</title>
+    <title>Bienvenido a Erick Moo ISC</title>
 </head>
 <body>
 

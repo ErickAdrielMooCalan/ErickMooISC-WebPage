@@ -1,0 +1,12 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# SEO-friendly URL rewrite rules
+RewriteRule ^register-client/?$ create_client.php [L]
+RewriteRule ^home/?$ index.php [L]
+RewriteRule ^login/?$ login.php [L]
+RewriteRule ^client-login/?$ login_client.php [L]
+RewriteRule ^test-connection/?$ test_connection.php [L]
+RewriteRule ^validate-register-client/?$ validate_create_client.php [L]
+RewriteRule ^validate-client-login/?$ validate_login_client.php [L]
+RewriteRule ^client-welcome/?$ welcome_client.php [L]

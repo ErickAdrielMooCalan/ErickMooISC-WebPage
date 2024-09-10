@@ -50,9 +50,9 @@
             $result = pg_query_params($conn, $query, $params);
 
             if ($result) {
-                echo "<script>alert('Cliente registrado exitosamente.'); window.location.href = 'login.php';</script>";
+                echo "<script>alert('Cliente registrado exitosamente.'); window.location.href = 'client-login';</script>";
             } else {
-                echo "<script>alert('Error al registrar el cliente.'); window.location.href = 'login.php';</script>";
+                echo "<script>alert('Error al registrar el cliente.'); window.location.href = 'client-login';</script>";
             }
         } else {
             echo "<script>alert('Error en la conexión a la base de datos.');</script>";

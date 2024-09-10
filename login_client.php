@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <?php include 'include/head.php';?>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/style_login_client.css'>
@@ -19,7 +19,7 @@
                 <i class="fa-solid fa-user key_user_icon"></i>
             </div>
 
-            <form action="validate_login_client.php" method="POST" class="login_form">
+            <form action="validate-client-login" method="POST" class="login_form">
                 <div class="form_group">
                     <label for="email_client">Correo</label>
                     <input type="email" id="email_client" name="email_client" required placeholder="Escribe tu correo electrónico">
@@ -35,7 +35,7 @@
 
             <div class="info_create_client">
                 <p>Crea una cuenta totalmente gratis</p>
-                <a href="create_client.php" class="create_client_buttom">Regístrate</a>
+                <a href="register-client" class="create_client_buttom">Regístrate</a>
 
             </div>
         </div>
