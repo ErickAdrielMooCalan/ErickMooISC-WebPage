@@ -52,14 +52,34 @@
         $query_update_user = "UPDATE users SET first_name = $1, second_name = $2, last_names = $3, email = $4, phone = $5, profile_image = $6 WHERE id_user = $7";
         $result_update_user = pg_query_params($conn, $query_update_user, array($first_name, $second_name, $last_names, $email, $phone, $profile_image, $user_client['id_user']));
 
-        // Update client details in the `client_details` table
-        $query_update_details = "UPDATE client_details SET type_service = $1, company = $2 WHERE fk_id_user = $3";
-        $result_update_details = pg_query_params($conn, $query_update_details, array($type_service, $company, $user_client['id_user']));
+        // Check if there is already a record in the `client_details` table for this user
+        $query_check_details = "SELECT COUNT(*) FROM client_details WHERE fk_id_user = $1";
+        $result_check_details = pg_query_params($conn, $query_check_details, array($user_client['id_user']));
+        $row_count = pg_fetch_result($result_check_details, 0, 0);
 
-        // Check if the updates were successful
+        if ($row_count > 0) {
+            // Update client details in the `client_details` table
+            $query_update_details = "UPDATE client_details SET type_service = $1, company = $2 WHERE fk_id_user = $3";
+            $result_update_details = pg_query_params($conn, $query_update_details, array($type_service, $company, $user_client['id_user']));
+        } else {
+            // Insert new client details in the `client_details` table
+            $query_insert_details = "INSERT INTO client_details (type_service, company, fk_id_user) VALUES ($1, $2, $3)";
+            $result_update_details = pg_query_params($conn, $query_insert_details, array($type_service, $company, $user_client['id_user']));
+        }
+
+        // Check if updates or inserts were successful
         if ($result_update_user && $result_update_details) {
             // Refresh the session data
-            $_SESSION['user_client'] = array_merge($user_client, ['first_name' => $first_name, 'second_name' => $second_name, 'last_names' => $last_names, 'email' => $email, 'phone' => $phone, 'type_service' => $type_service, 'company' => $company, 'profile_image' => $profile_image]);
+            $_SESSION['user_client'] = array_merge($user_client, [
+                'first_name' => $first_name,
+                'second_name' => $second_name,
+                'last_names' => $last_names,
+                'email' => $email,
+                'phone' => $phone,
+                'type_service' => $type_service,
+                'company' => $company,
+                'profile_image' => $profile_image
+            ]);
 
             // Redirect to the welcome page
             header("Location: client-welcome");
@@ -76,3 +96,4 @@
     // Close the database connection
     pg_close($conn);
 ?>
+
