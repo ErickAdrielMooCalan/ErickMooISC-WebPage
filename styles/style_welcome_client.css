@@ -43,54 +43,78 @@ body {
 }
 
 
-.tab_container {
+.tab_container{
     border: 1px solid var(--aditional_gray-color_high);
     border-top: none;
     overflow: hidden;
     width: 100%;
     background: #fff;
-  }
-  .tab_content {
-    padding: 20px;
-    padding: 10px;
-    background-color: #ececec;
+}
+.tab_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    background-color: var(--body-color);
+    justify-content: center;
+    align-items: center;
     margin-bottom: 5px;
     padding: 10px;
-  }
-  ul.tabs {
+}
+  .tab_content figure {
+    margin: 0;
+    padding: 0;
+}
+.tab_content figure img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+.data_client {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
+    padding: 10px;
+}
+ul.tabs{
     list-style: none;
     margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-  }
-  ul.tabs li {
+}
+ul.tabs li{
     border: 1px #999 solid;
     background: var(--quaternary-color);
     width: 33.33%;
     text-align: center;
-  }
-  ul.tabs li a {
+}
+ul.tabs li a{
     text-decoration: none;
     color: #000;
     display: block;
     padding: 10px 30px;
-  }
-  ul.tabs li a:hover {
+}
+ul.tabs li a:hover{
     background: var(--aditional_gray-color_high);
     color: var(--body-color);
-  }
-
-  html ul.tabs li.active {
+}
+html ul.tabs li.active{
     background: var(--aditional_gray-color);
     font-weight: 500;
-  }
-  html ul.tabs li.active a:hover {
+}
+html ul.tabs li.active a:hover{
     background: var(--body-color);
     color: var(--black-color);
-  }
-  .logout_buttom{
+}
+.logout_buttom{
     display: inline-block;
     padding: 6px;
     text-decoration: none;
@@ -102,8 +126,8 @@ body {
     background-color: var(--button_red-color_high);
     color: var(--body-color);
     transition: all 0.5s;
-  }
-  .logout_buttom:hover{
+}
+.logout_buttom:hover{
     color: var(--body-color);
     background-color: var(--button_red-color);
     font-weight: 600;

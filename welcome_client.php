@@ -34,12 +34,26 @@ $user_client = $_SESSION['user_client'];
 
         <div class="tab_container ancho">
             <div class="tab_content" id="tab1">
-                <h5>Bienvenido</h5>
-                <br>
-                <p>Bienvenido: <?php echo htmlspecialchars($user_client['first_name']); ?> <?php echo htmlspecialchars($user_client['second_name']); ?> <?php echo htmlspecialchars($user_client['last_names']); ?>!</p>
-                <p>Tu edad es: <?php echo htmlspecialchars($user_client['age']); ?></p>
+                <h3>Bienvenido</h3>
+                <?php if ($user_client['profile_image']):?>
+                <figure>
+                    <img src="<?php echo htmlspecialchars($user_client['profile_image']); ?>" alt="Foto de perfil" class="profile_image">
+                </figure>
 
-                <a href="client-logout" class="logout_buttom">Cerrar sesión</a>
+                <?php else: ?>
+                    <p>No tienes una foto de perfil.</p>
+                <?php endif; ?>
+
+                <div class="data_client">
+                    <p><strong>Cliente:</strong> <?php echo htmlspecialchars($user_client['first_name']); ?> <?php echo htmlspecialchars($user_client['second_name']); ?> <?php echo htmlspecialchars($user_client['last_names']); ?></p>
+                    <p><strong>Correo:</strong> <?php echo htmlspecialchars($user_client['email']); ?></p>
+                    <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($user_client['phone']); ?></p>
+                    <p><strong>Edad:</strong> <?php echo htmlspecialchars($user_client['age']); ?></p>
+                    <p><strong>Servicio contratado:</strong></p>
+                    <p><strong>Empresa:</strong></p>
+                </div>
+
+                <a href="client-logout" class="logout_buttom"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
             </div>
 
             <div class="tab_content" id="tab2">
