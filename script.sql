@@ -13,7 +13,7 @@ CREATE TABLE users(
     email VARCHAR(100) NOT NULL,
     phone VARCHAR(10),
     profile_image VARCHAR(255),
-    password VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     fk_id_user_type UUID NOT NULL,
     FOREIGN KEY (fk_id_user_type) REFERENCES user_types(id_user_type)
 );
