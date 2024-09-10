@@ -3,56 +3,62 @@
 
     session_start();
 
-    if (isset($_POST['email_client']) && isset($_POST['password_client'])){
+    if (isset($_POST['email_client']) && isset($_POST['password_client'])) {
         $email_client = $_POST['email_client'];
         $password_client = $_POST['password_client'];
 
         // Verify the connection to the database
-        if ($conn){
+        if ($conn) {
             $query_client = "SELECT * FROM users WHERE email = $1 LIMIT 1";
             $result_client = pg_query_params($conn, $query_client, array($email_client));
 
             // Check if the user exists
-            if ($result_client && pg_num_rows($result_client) > 0){
+            if ($result_client && pg_num_rows($result_client) > 0) {
                 // Get user data
                 $user_client = pg_fetch_assoc($result_client);
 
                 // Check if the user is a client
-                if ($user_client['fk_id_user_type'] === 'a1261531-fec8-4a4d-8f6b-bed7a47031ab'){
+                if ($user_client['fk_id_user_type'] === 'a1261531-fec8-4a4d-8f6b-bed7a47031ab') {
                     // Check if the password is correct
-                    if (password_verify($password_client, $user_client['password'])){
-                        // SAVE USER DATA IN THE SESSION
-                        $_SESSION['user_client'] = $user_client;
+                    if (password_verify($password_client, $user_client['password'])) {
+                        // Get additional client details from the `client_details` table
+                        $query_details = "SELECT type_service, company FROM client_details WHERE fk_id_user = $1 LIMIT 1";
+                        $result_details = pg_query_params($conn, $query_details, array($user_client['id_user']));
 
-                        // Redirect the user to "welcome_client.php"
+                        // If client details exist, add them to the session
+                        if ($result_details && pg_num_rows($result_details) > 0) {
+                            $client_details = pg_fetch_assoc($result_details);
+                            // Add client details to the session information
+                            $_SESSION['user_client'] = array_merge($user_client, $client_details);
+                        } else {
+                            // If no details are found, initialize the fields as empty
+                            $_SESSION['user_client'] = array_merge($user_client, ['type_service' => '', 'company' => '']);
+                        }
+
+                        // Redirect the user to "client-welcome.php"
                         header("Location: client-welcome");
                         exit();
-                    }
-                    else{
+                    } else {
                         // Incorrect password
-                        echo "<script>alert('Contraseña incorrecta'); window.location.href = 'client-login';</script>";
+                        echo "<script>alert('Incorrect password'); window.location.href = 'client-login';</script>";
                     }
-                }
-                else{
+                } else {
                     // Access denied for non-clients
-                    echo "<script>alert('Acceso denegado, solo clientes pueden iniciar sesión'); window.location.href = 'client-login';</script>";
+                    echo "<script>alert('Access denied, only clients can log in'); window.location.href = 'client-login';</script>";
                 }
-            }
-            else{
+            } else {
                 // User not found
-                echo "<script>alert('Usuario no encontrado'); window.location.href = 'client-login';</script>";
+                echo "<script>alert('User not found'); window.location.href = 'client-login';</script>";
             }
-        }
-        else{
+        } else {
             // Database connection error
-            echo "<script>alert('Error de conexión con la base de datos'); window.location.href = 'client-login';</script>";
+            echo "<script>alert('Database connection error'); window.location.href = 'client-login';</script>";
         }
 
         // Close the connection
         pg_close($conn);
-    }
-    else{
+    } else {
         // Missing fields
-        echo "<script>alert('Por favor complete todos los campos.'); window.location.href = 'client-login';</script>";
+        echo "<script>alert('Please fill in all fields.'); window.location.href = 'client-login';</script>";
     }
 ?>

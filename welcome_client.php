@@ -1,14 +1,18 @@
 <?php
-session_start(); // start session
+    session_start();
 
-// Check if the user is authenticated
-if (!isset($_SESSION['user_client'])) {
-    header("Location: client-login"); // Redirige al usuario a la página de inicio de sesión si no está autenticado
-    exit();
-}
+    // Check if the user is authenticated
+    if (!isset($_SESSION['user_client'])) {
+        header("Location: client-login");
+        exit();
+    }
 
-// Retrieve user data from the session
-$user_client = $_SESSION['user_client'];
+    // Get client data from the session
+    $user_client = $_SESSION['user_client'];
+
+    // Initialize client details variables (type_service and company)
+    $type_service = isset($user_client['type_service']) ? htmlspecialchars($user_client['type_service']) : '';
+    $company = isset($user_client['company']) ? htmlspecialchars($user_client['company']) : '';
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +28,6 @@ $user_client = $_SESSION['user_client'];
 </head>
 <body>
 
-
     <section class="main_container main_width">
         <ul class="tabs main_width">
             <li><a href="#tab1"><i class="fa-solid fa-user"></i> Mi cuenta</a></li>
@@ -37,11 +40,11 @@ $user_client = $_SESSION['user_client'];
                 <h3>Bienvenido</h3>
                 <?php if ($user_client['profile_image']):?>
                 <figure>
-                    <img src="<?php echo htmlspecialchars($user_client['profile_image']); ?>" alt="Foto de perfil" class="profile_image">
+                    <img src="<?php echo htmlspecialchars($user_client['profile_image']); ?>" alt="Profile Picture" class="profile_image">
                 </figure>
 
                 <?php else: ?>
-                    <p>No tienes una foto de perfil.</p>
+                    <p>No tienes foto de perfil</p>
                 <?php endif; ?>
 
                 <div class="data_client">
@@ -49,23 +52,72 @@ $user_client = $_SESSION['user_client'];
                     <p><strong>Correo:</strong> <?php echo htmlspecialchars($user_client['email']); ?></p>
                     <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($user_client['phone']); ?></p>
                     <p><strong>Edad:</strong> <?php echo htmlspecialchars($user_client['age']); ?></p>
-                    <p><strong>Servicio contratado:</strong></p>
-                    <p><strong>Empresa:</strong></p>
+                    <p><strong>Servicio contratado:</strong> <?php echo htmlspecialchars($type_service); ?></p>
+                    <p><strong>Empresa:</strong> <?php echo htmlspecialchars($company); ?></p>
                 </div>
 
                 <a href="client-logout" class="logout_buttom"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
             </div>
 
             <div class="tab_content" id="tab2">
-                <h5>Revisa cuidadosamente tus datos antes de aplicar cambios</h5>
-                <br>
-                <p>Sección para editar los datos del cliente</p>
+                <h5><i class="fa-solid fa-triangle-exclamation"></i> Revisa tus datos antes de actualizarlos</h5>
+                <form action="client-update" method="POST" enctype="multipart/form-data" class="form_container">
+
+                    <div class="outgroup">
+                        <div class="form_group">
+                            <label for="first_name">Primer nombre:</label>
+                            <input type="text" name="first_name" id="first_name" value="<?php echo htmlspecialchars($user_client['first_name']); ?>">
+                        </div>
+
+                        <div class="form_group">
+                            <label for="second_name">Segundo nombre:</label>
+                            <input type="text" name="second_name" id="second_name" value="<?php echo htmlspecialchars($user_client['second_name']); ?>">
+                        </div>
+
+                        <div class="form_group">
+                            <label for="last_names">Apellidos:</label>
+                            <input type="text" name="last_names" id="last_names" value="<?php echo htmlspecialchars($user_client['last_names']); ?>">
+                        </div>
+                    </div>
+
+                    <div class="outgroup">
+                        <div class="form_group">
+                            <label for="email">Correo:</label>
+                            <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($user_client['email']); ?>">
+                        </div>
+
+                        <div class="form_group">
+                            <label for="phone">Teléfono:</label>
+                            <input type="text" name="phone" id="phone" value="<?php echo htmlspecialchars($user_client['phone']); ?>">
+                        </div>
+
+                        <div class="form_group">
+                            <label for="type_service">Servicio contratado:</label>
+                            <input type="text" id="type_service" name="type_service" value="<?php echo htmlspecialchars($type_service); ?>">
+                        </div>
+                    </div>
+
+
+                    <div class="outgroup">
+                        <div class="form_group">
+                            <label for="company">Empresa:</label>
+                            <input type="text" id="company" name="company" value="<?php echo htmlspecialchars($company); ?>">
+                        </div>
+
+                        <div class="form_group">
+                            <label for="profile_image">Imagen de perfil:</label>
+                            <input type="file" name="profile_image" id="profile_image">
+                        </div>
+
+                        <button type="submit" class="save_button">Guardar cambios</button>
+                    </div>
+                </form>
             </div>
 
             <div class="tab_content" id="tab3">
-                <h5>Usa tus cupones para obtener grandes descuentos</h5>
+                <h5>Usa tus cupones para obtener descuentos</h5>
                 <br>
-                <p>Sección para visualizar cupones</p>
+                <p>Sección para cupones</p>
             </div>
 
         </div>
@@ -74,25 +126,24 @@ $user_client = $_SESSION['user_client'];
 
 </body>
 
-
 <?php include 'include/footer.php'; ?>
 
 <script>
     new WOW().init();
 
-    $(".tab_content").hide(); //oculta todo el contenido
-    $("ul.tabs li:first").addClass("active").show(); //Activa el css del primer tab
-    $(".tab_content:first").show(); //Muestra el contenido del primer tab
+    $(".tab_content").hide(); // Hide all content
+    $("ul.tabs li:first").addClass("active").show(); // Activate the CSS of the first tab
+    $(".tab_content:first").show(); // Show the content of the first tab
 
-    //Evento click al boton
+    // Click event for the tab
     $("ul.tabs li").click(function () {
 
-      $("ul.tabs li").removeClass("active"); //Quita la clase "active"
-      $(this).addClass("active"); //Agrega la clase "active"al tab seleccionado
-      $(".tab_content").hide(); //Oculta el contenido de las pestaña
+      $("ul.tabs li").removeClass("active"); // Remove the "active" class
+      $(this).addClass("active"); // Add the "active" class to the selected tab
+      $(".tab_content").hide(); // Hide the content of the tabs
 
       var activeTab = $(this).find("a").attr("href");
-      $(activeTab).fadeIn(); //Aparece el contenedor activo
+      $(activeTab).fadeIn(); // Show the active container
       return false;
     });
 </script>
