@@ -40,25 +40,25 @@
                         exit();
                     } else {
                         // Incorrect password
-                        echo "<script>alert('Incorrect password'); window.location.href = 'client-login';</script>";
+                        echo "<script>alert('Contraseña incorrecta, prueba de nuevo'); window.location.href = 'client-login';</script>";
                     }
                 } else {
                     // Access denied for non-clients
-                    echo "<script>alert('Access denied, only clients can log in'); window.location.href = 'client-login';</script>";
+                    echo "<script>alert('Acceso denegado ¿Eres un administrador?'); window.location.href = 'client-login';</script>";
                 }
             } else {
                 // User not found
-                echo "<script>alert('User not found'); window.location.href = 'client-login';</script>";
+                echo "<script>alert('Cliente no encontrado ¿Has creado una cuenta?'); window.location.href = 'client-login';</script>";
             }
         } else {
             // Database connection error
-            echo "<script>alert('Database connection error'); window.location.href = 'client-login';</script>";
+            echo "<script>alert('No se puede establecer conexión con la base de datos'); window.location.href = 'client-login';</script>";
         }
 
         // Close the connection
         pg_close($conn);
     } else {
         // Missing fields
-        echo "<script>alert('Please fill in all fields.'); window.location.href = 'client-login';</script>";
+        echo "<script>alert('Lleva los campos requeridos'); window.location.href = 'client-login';</script>";
     }
 ?>

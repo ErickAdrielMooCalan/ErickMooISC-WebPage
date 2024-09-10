@@ -55,7 +55,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 25px;
     font-size: 20px;
     background-color: var(--body-color);
     justify-content: center;
@@ -68,19 +68,34 @@ body {
     padding: 0;
 }
 .tab_content figure img {
-    width: 200px;
-    height: 200px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
     display: block;
 }
-.data_client {
+.data_client{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: left;
-    gap: 5px;
+    flex-wrap: wrap;
+    gap: 50px;
     padding: 10px;
+    width: auto;
+    border-radius: 15px;
+    background-color: var(--quaternary-color);
+    border: 2px var(--aditional_gray-color) solid;
+}
+.outgroup_data_client{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5px;
+  /*border: 1px blue solid;*/
+}
+.warning_color{
+  color: var(--button_red-color_high);
 }
 ul.tabs{
     list-style: none;

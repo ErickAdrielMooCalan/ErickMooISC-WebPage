@@ -32,12 +32,12 @@
         <ul class="tabs main_width">
             <li><a href="#tab1"><i class="fa-solid fa-user"></i> Mi cuenta</a></li>
             <li><a href="#tab2"><i class="fa-solid fa-pen-to-square"></i> Editar mis datos</a></li>
-            <li><a href="#tab3"><i class="fa-solid fa-ticket"></i> Cupones</a></li>
+            <li><a href="#tab3"><i class="fa-solid fa-ticket"></i> Historial y cupones</a></li>
         </ul>
 
         <div class="tab_container ancho">
             <div class="tab_content" id="tab1">
-                <h3>Bienvenido</h3>
+                <h3><i class="fa-solid fa-face-smile-wink"></i> Bienvenido/a</h3>
                 <?php if ($user_client['profile_image']):?>
                 <figure>
                     <img src="<?php echo htmlspecialchars($user_client['profile_image']); ?>" alt="Profile Picture" class="profile_image">
@@ -48,19 +48,34 @@
                 <?php endif; ?>
 
                 <div class="data_client">
-                    <p><strong>Cliente:</strong> <?php echo htmlspecialchars($user_client['first_name']); ?> <?php echo htmlspecialchars($user_client['second_name']); ?> <?php echo htmlspecialchars($user_client['last_names']); ?></p>
-                    <p><strong>Correo:</strong> <?php echo htmlspecialchars($user_client['email']); ?></p>
-                    <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($user_client['phone']); ?></p>
-                    <p><strong>Edad:</strong> <?php echo htmlspecialchars($user_client['age']); ?></p>
-                    <p><strong>Servicio contratado:</strong> <?php echo htmlspecialchars($type_service); ?></p>
-                    <p><strong>Empresa:</strong> <?php echo htmlspecialchars($company); ?></p>
+                    <div class="">
+                        <p><strong><i class="fa-solid fa-user"></i> Cliente:</strong></p>
+                        <p><?php echo htmlspecialchars($user_client['first_name']); ?> <?php echo htmlspecialchars($user_client['second_name']); ?> <?php echo htmlspecialchars($user_client['last_names']); ?></p>
+                        <p><strong><i class="fa-solid fa-envelope"></i> Correo:</strong></p>
+                        <p><?php echo htmlspecialchars($user_client['email']); ?></p>
+                    </div>
+
+                    <div class="outgroup_data_client">
+                    <p><strong><i class="fa-solid fa-phone"></i> Teléfono:</strong></p>
+                        <p><?php echo htmlspecialchars($user_client['phone']); ?></p>
+                        <p><strong><i class="fa-regular fa-calendar-days"></i> Edad:</strong></p>
+                        <p><?php echo htmlspecialchars($user_client['age']); ?></p>
+
+                    </div>
+
+                    <div class="outgroup_data_client">
+                        <p><strong><i class="fa-solid fa-file-signature"></i> Servicio contratado:</strong></p>
+                        <p><?php echo htmlspecialchars($type_service); ?></p>
+                        <p><strong><i class="fa-solid fa-building"></i> Empresa:</strong></p>
+                        <p><?php echo htmlspecialchars($company); ?></p>
+                    </div>
                 </div>
 
                 <a href="client-logout" class="logout_buttom"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
             </div>
 
             <div class="tab_content" id="tab2">
-                <h5><i class="fa-solid fa-triangle-exclamation"></i> Revisa tus datos antes de actualizarlos</h5>
+                <h3 class="warning_color"><i class="fa-solid fa-triangle-exclamation"></i> Revisa tus datos antes de actualizarlos</h3>
                 <form action="client-update" method="POST" enctype="multipart/form-data" class="form_container">
 
                     <div class="outgroup">
@@ -93,7 +108,11 @@
 
                         <div class="form_group">
                             <label for="type_service">Servicio contratado:</label>
-                            <input type="text" id="type_service" name="type_service" value="<?php echo htmlspecialchars($type_service); ?>">
+                            <select id="type_service" name="type_service">
+                                <option value="Soporte y mantenimiento" <?php echo ($type_service === 'Soporte y mantenimiento') ? 'selected' : ''; ?>>Soporte y mantenimiento</option>
+                                <option value="Administración de bases de datos" <?php echo ($type_service === 'Administración de bases de datos') ? 'selected' : ''; ?>>Administración de bases de datos</option>
+                                <option value="Desarrollo web" <?php echo ($type_service === 'Desarrollo web') ? 'selected' : ''; ?>>Desarrollo web</option>
+                            </select>
                         </div>
                     </div>
 
@@ -115,7 +134,7 @@
             </div>
 
             <div class="tab_content" id="tab3">
-                <h5>Usa tus cupones para obtener descuentos</h5>
+                <h3>Usa tus cupones para obtener descuentos</h3>
                 <br>
                 <p>Sección para cupones</p>
             </div>
