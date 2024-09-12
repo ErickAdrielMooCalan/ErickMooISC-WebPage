@@ -34,9 +34,14 @@
             </form>
 
             <div class="info_create_client">
+                <p>¿Olvidaste tu contraseña?</p>
+                <a href="client-forgot-password" class="recover_password">Recuperar accesso</a>
+
+            </div>
+
+            <div class="info_create_client">
                 <p>Crea una cuenta totalmente gratis</p>
                 <a href="register-client" class="create_client_buttom">Regístrate</a>
-
             </div>
         </div>
     </section>
