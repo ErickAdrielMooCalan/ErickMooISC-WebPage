@@ -11,6 +11,21 @@
 </head>
 <body>
     <?php include 'include/header.php';?>
+
+    <section class="main_section main_width">
+        <div class="form_container">
+        <i class="fa-solid fa-envelope-circle-check icon_mail"></i>
+
+            <form action="link_reset_password_client.php" method="POST">
+                <div class="form_group">
+                    <label for="email_client">¿Cuál es su correo?</label>
+                    <input type="email" id="email_client" name="email_client" required placeholder="Escribe tu correo electrónico">
+                    <button type="submit" class="buttom_recover">Enviar enlace de recuperación</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
 </body>
 
 <?php include 'include/footer.php'; ?>
