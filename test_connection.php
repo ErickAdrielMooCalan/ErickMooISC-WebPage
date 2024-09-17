@@ -10,10 +10,10 @@
 
     // Connection to PostgreSQL
     $conn = pg_connect($conn_str);
-
+    /*
     if ($conn) {
         echo "Successful connection";
     } else {
         echo "Connection error";
-    }
+    }*/
 ?>
