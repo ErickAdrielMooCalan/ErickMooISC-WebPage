@@ -49,6 +49,17 @@ CREATE TABLE admin_company_rel (
     FOREIGN KEY (fk_id_company) REFERENCES company(id_company)
 );
 
+ALTER TABLE users
+ADD CONSTRAINT unique_email UNIQUE (email);
+
+CREATE TABLE password_resets (
+    id_password_reset UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    reset_token VARCHAR(255) NOT NULL,
+    reset_expiry TIMESTAMP NOT NULL,
+    fk_email_client VARCHAR(100) NOT null,
+    FOREIGN KEY (fk_email_client) REFERENCES users(email)
+);
+
 --admin test
 insert into users (first_name, second_name, last_names, age, email, password, fk_id_user_type)
 values ('Sergio', 'Augusto', 'Pérez Sánchez', 35, 'sergioaugustopz@gmail.com', 'lapvr4553', 'dbb2cf39-7ca6-46c3-839b-9d96c99d984d');

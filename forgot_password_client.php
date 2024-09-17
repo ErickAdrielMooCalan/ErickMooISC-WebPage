@@ -16,7 +16,7 @@
         <div class="form_container">
         <i class="fa-solid fa-envelope-circle-check icon_mail"></i>
 
-            <form action="link_reset_password_client.php" method="POST">
+            <form action="client-link-reset" method="POST">
                 <div class="form_group">
                     <label for="email_client">¿Cuál es su correo?</label>
                     <input type="email" id="email_client" name="email_client" required placeholder="Escribe tu correo electrónico">
