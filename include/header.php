@@ -11,9 +11,10 @@
             <ul>
                 <li> <a href="home">Inicio</a> </li>
                 <li> <a href=" ">Historial de trabajo</a> </li>
+                <li> <a href=" ">Clientes principales</a> </li>
                 <li> <a href=" ">Contáctame</a> </li>
                 <li> <a href=" ">Sobre mí</a> </li>
-                <li> <a href="login"> <i class="fa-solid fa-key"></i> Iniciar sesión</a> </li>
+                <li> <a href="login"> <i class="fa-solid fa-right-to-bracket"></i></i> Iniciar sesión</a> </li>
             </ul>
         </nav>
 

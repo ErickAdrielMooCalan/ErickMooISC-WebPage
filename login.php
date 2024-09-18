@@ -13,7 +13,7 @@
         <div class="buttoms_login_container">
             <i class="fa-solid fa-users icon_user_type"></i>
             <a href="client-login" class="client_buttom">Cliente</a>
-            <a href="" class="admin_buttom">Administrador</a>
+            <a href="admin-login" class="admin_buttom">Administrador</a>
         </div>
 
 

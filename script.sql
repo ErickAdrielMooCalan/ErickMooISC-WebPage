@@ -60,9 +60,35 @@ CREATE TABLE password_resets (
     FOREIGN KEY (fk_email_client) REFERENCES users(email)
 );
 
+ALTER TABLE users
+ADD CONSTRAINT unique_phone UNIQUE (phone);
+
+CREATE TABLE discount_coupons (
+    id_coupon UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    coupon_name VARCHAR(50) NOT NULL,
+    applicable_cases TEXT NOT NULL,
+    expiry_date DATE NOT NULL,
+    fk_client_id UUID NOT NULL,
+    FOREIGN KEY (fk_client_id) REFERENCES client_details(id_client)
+);
+
+CREATE TABLE service_requests (
+    id_service_request UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    service_type VARCHAR(100) NOT NULL,
+    actions_taken TEXT,
+    total_cost DECIMAL(10, 2) NOT NULL,
+    service_date DATE NOT NULL,
+    delivery_date DATE,
+    fk_client_id UUID NOT NULL,
+    FOREIGN KEY (fk_client_id) REFERENCES client_details(id_client)
+);
+
 --admin test
 insert into users (first_name, second_name, last_names, age, email, password, fk_id_user_type)
-values ('Sergio', 'Augusto', 'Pérez Sánchez', 35, 'sergioaugustopz@gmail.com', 'lapvr4553', 'dbb2cf39-7ca6-46c3-839b-9d96c99d984d');
+values ('Erick', 'Adriel', 'Moo Calan', 35, 'erick.moo.isc', '$2y$10$cSv/UmUg3bIC4GVS7BPmGOy4U9iHTZOc1uhg39YR9katA2UD3XCLm', '643dce86-c777-41c1-837e-53a6831f3d85');
+
+insert into admin_details (admin_role, fk_id_user) values ('Main Administrator', '36054c8e-672d-426f-acfd-7bf6117e6ebd');
+
 
 --client test
 insert into users (first_name, second_name, last_names, age, email, password, fk_id_user_type)
