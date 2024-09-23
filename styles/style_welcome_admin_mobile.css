@@ -1,25 +1,73 @@
 @media screen and (max-width: 480px) {
 
-    :root{
-        --primary-color: #0077AA;
-        --secondary-claro: #3BB4F4;
-        --tertiary-color: #F1DF3A;
-        --quaternary-color: #BDBDBD;
-        --body-color: #F6F6F6;
-        --black-color: #202022;
-      }
+  :root{
+    --primary-color: #0077AA;
+    --secondary-claro: #3BB4F4;
+    --tertiary-color: #F1DF3A;
+    --quaternary-color: #BDBDBD;
+    --aditional_gray-color: #8a8a8a;
+    --aditional_gray-color_high: #4b4b4b;
+    --body-color: #F6F6F6;
+    --black-color: #202022;
+    --button_red-color: #ff4048;
+    --button_red-color_high: #a1262c;
+    --button_green-color: #00d660;
+  }
 
 
-    ul.tabs {
-        flex-direction: column;
-      }
-      ul.tabs li {
-        width: 100%;
-      }
+  ul.tabs{
+    flex-direction: column;
+    }
+  ul.tabs li{
+    width: 100%;
+  }
 
   .data_admin{
     font-size: 20px;
     gap: 10px;
+  }
+  .charge_table{
+    width: 100%;
+    overflow-x: hidden; /* Evitar desplazamiento horizontal */
+
+  }
+  .charge_table th, .charge_table td {
+    padding: 10px; /* Espaciado general */
+    font-size: 17px; /* Tamaño de fuente más grande para celdas */
+    display: block; /* Mostrar celdas como bloque */
+    width: 100%; /* Asegurar que las celdas ocupen el 100% */
+    box-sizing: border-box; /* Incluir padding y border en el tamaño total */
+  }
+
+  .charge_table th {
+    display: none; /* Ocultar encabezados en pantallas pequeñas */
+  }
+
+  .charge_table tr {
+    margin-bottom: 8px; /* Espaciado entre filas */
+    display: block; /* Mostrar filas como bloque */
+    border: 1px solid #ddd; /* Borde de las filas */
+    width: 100%; /* Asegurar que la fila no se extienda */
+  }
+
+  .charge_table td {
+    border: none; /* Sin borde en las celdas */
+    position: relative; /* Posicionamiento relativo */
+    padding-top: 25px;
+    color: var(--aditional_gray-color_high);
+    width: 100%; /* Asegurar que las celdas no se expandan más allá del contenedor */
+  }
+
+  .charge_table td::before {
+    content: attr(data-label); /* Usar 'data-label' para encabezados */
+    position: absolute;
+    left: 10px; /* Espacio a la izquierda */
+    font-weight: bold; /* Negrita para el encabezado */
+    top: 0px; /* Espacio desde la parte superior */
+    margin-bottom: 6px; /* Espacio entre el encabezado y el contenido */
+    font-size: 18px; /* Tamaño de fuente más grande para el encabezado */
+    font-weight: 400;
+    color: var(--black-color);
   }
 
 }

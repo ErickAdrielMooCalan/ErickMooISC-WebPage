@@ -4,7 +4,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src='https://kit.fontawesome.com/2ee0245f3d.js' crossorigin='anonymous'></script>
+<!-- Fontawesome 6.6.0 librarie -->
+<link rel="stylesheet" href="libraries/fontawesome-free-6.6.0-web/css/fontawesome.css">
+<link rel="stylesheet" href="libraries/fontawesome-free-6.6.0-web/css/brands.css">
+<link rel="stylesheet" href="libraries/fontawesome-free-6.6.0-web/css/solid.css">
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <script src="libraries/wow.min.js"></script>
 <!-- Splide librarie -->

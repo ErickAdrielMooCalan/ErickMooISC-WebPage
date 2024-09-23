@@ -128,10 +128,20 @@
                 </form>
             </div>
 
-            <div class="tab_content" id="tab3">
-                <h3>Gestión de Usuarios</h3>
-                <p>Aquí puedes gestionar los usuarios de la plataforma.</p>
-                <!-- Aquí podrías añadir un listado o formulario para gestionar usuarios -->
+            <div class="tab_content main_width" id="tab3">
+                <form id="searchForm">
+                    <label for="search_term">Buscar usuario:</label>
+                    <input type="text" name="search_term" id="search_term" placeholder="Teléfono, Correo o Apellidos">
+                    <!-- Eliminar el botón de búsqueda -->
+                </form>
+
+                <!-- Contenedor para la tabla de resultados -->
+                <div id="result_table" class="charge_table">
+                    <!-- Aquí se insertará la tabla con AJAX -->
+                </div>
+
+                <button id="backToTab3" style="display: none;">Volver a Cobro de servicio</button>
+
             </div>
 
             <div class="tab_content" id="tab4">
@@ -166,6 +176,59 @@
       $(activeTab).fadeIn(); // Show the active container
       return false;
     });
+
+    $(document).ready(function() {
+    // Escuchar el evento de envío del formulario (aunque no se envía ahora)
+    $('#searchForm').on('submit', function(e) {
+        e.preventDefault(); // Prevenir que el formulario recargue la página
+    });
+
+    // Escuchar el evento de entrada en el campo de búsqueda
+    $('#search_term').on('input', function() {
+        // Obtener el término de búsqueda
+        let search_term = $(this).val();
+
+        // Realizar la solicitud AJAX si hay texto en el campo
+        if (search_term.length > 0) {
+            $.ajax({
+                url: 'manage_clients_service.php', // Archivo PHP para procesar la búsqueda
+                type: 'GET',
+                data: { search_term: search_term }, // Enviar el término de búsqueda
+                success: function(response) {
+                    // Colocar la respuesta (tabla) dentro del div de resultados
+                    $('#result_table').html(response);
+                    
+                    // Mostrar el botón para volver a la pestaña 3 (si decides mantenerlo en el futuro)
+                    $('#backToTab3').show();
+                },
+                error: function() {
+                    alert('Hubo un error al procesar la solicitud.');
+                }
+            });
+        } else {
+            // Limpiar la tabla si el campo está vacío
+            $('#result_table').html('');
+        }
+    });
+
+    // Manejar el clic en el botón para volver a la pestaña 3
+    $('#backToTab3').on('click', function() {
+        // Cambiar a la pestaña 3
+        $("ul.tabs li").removeClass("active");
+        $("ul.tabs li:eq(2)").addClass("active");
+        $(".tab_content").hide();
+        $("#tab3").fadeIn();
+
+        // Limpiar el campo de búsqueda y la tabla
+        $('#search_term').val(''); // Limpiar el campo de búsqueda
+        $('#result_table').html(''); // Limpiar la tabla de resultados
+
+        // Ocultar el botón
+        $(this).hide();
+    });
+});
+
+
 </script>
 
 </html>
