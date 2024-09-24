@@ -208,6 +208,45 @@ html ul.tabs li.active a:hover{
   color: var(--black-color);
 }
 
+.info_search{
+  font-size: 16px;
+  color: var(--primary-color);
+}
+.searchBar{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+}
+.searchBar label {
+  font-family: "Moderustic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--black-color);
+}
+.searchBar input {
+padding: 5px;
+width: 300px;
+border-radius: 5px;
+}
+
+.clearButtom{
+  background-color: var(--tertiary-color);
+  border: 2px var(--tertiary-color) solid;
+  color: var(--black-color);
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.clearButtom:hover{
+  background-color: var(--quaternary-color);
+  border: 2px var(--aditional_gray-color_high) solid;
+}
+
 .charge_table {
   margin-top: 20px;
   max-width: 100%;
@@ -226,13 +265,14 @@ html ul.tabs li.active a:hover{
 .charge_table th, .charge_table td {
   padding: 10px;
   text-align: left;
+  font-size: 15px;
   border: 1px solid #ddd; /* Bordes de las celdas */
 }
 
-/* Estilo para el encabezado */
+/* Header style */
 .charge_table th {
-  background-color: #4CAF50; /* Color de fondo del encabezado */
-  color: white;              /* Color del texto del encabezado */
+  background-color: #4CAF50;
+  color: white;
 }
 
 /* Estilo para las filas de la tabla */

@@ -129,19 +129,18 @@
             </div>
 
             <div class="tab_content main_width" id="tab3">
-                <form id="searchForm">
-                    <label for="search_term">Buscar usuario:</label>
+                <form id="searchForm" class="searchBar">
+                    <label for="search_term"><i class="fa-solid fa-magnifying-glass"></i> Buscar cliente</label>
+                        <p class="info_search"><i class="fa-solid fa-circle-info"></i> Busca a un cliente en específico por medio de su teléfono, correo o apellidos</p>
                     <input type="text" name="search_term" id="search_term" placeholder="Teléfono, Correo o Apellidos">
-                    <!-- Eliminar el botón de búsqueda -->
                 </form>
 
-                <!-- Contenedor para la tabla de resultados -->
+                <button id="backToTab3" style="display: none;" class="clearButtom"><i class="fa-solid fa-eraser"></i> Limpiar búsqueda</button>
+
+                <!-- Container for the results table -->
                 <div id="result_table" class="charge_table">
-                    <!-- Aquí se insertará la tabla con AJAX -->
+                    <!-- Here the table will be inserted with AJAX -->
                 </div>
-
-                <button id="backToTab3" style="display: none;">Volver a Cobro de servicio</button>
-
             </div>
 
             <div class="tab_content" id="tab4">
@@ -177,58 +176,62 @@
       return false;
     });
 
-    $(document).ready(function() {
-    // Escuchar el evento de envío del formulario (aunque no se envía ahora)
-    $('#searchForm').on('submit', function(e) {
-        e.preventDefault(); // Prevenir que el formulario recargue la página
-    });
+    $(document).ready(function(){
+        // Listen to the form submit event (even though it is not submitted now)
+        $('#searchForm').on('submit', function(e) {
+            // Prevent the form from reloading the page
+            e.preventDefault();
+        });
 
-    // Escuchar el evento de entrada en el campo de búsqueda
-    $('#search_term').on('input', function() {
-        // Obtener el término de búsqueda
-        let search_term = $(this).val();
+        // Listen to input event in search field
+        $('#search_term').on('input', function(){
+            // Get the search term
+            let search_term = $(this).val();
 
-        // Realizar la solicitud AJAX si hay texto en el campo
-        if (search_term.length > 0) {
-            $.ajax({
-                url: 'manage_clients_service.php', // Archivo PHP para procesar la búsqueda
-                type: 'GET',
-                data: { search_term: search_term }, // Enviar el término de búsqueda
-                success: function(response) {
-                    // Colocar la respuesta (tabla) dentro del div de resultados
-                    $('#result_table').html(response);
-                    
-                    // Mostrar el botón para volver a la pestaña 3 (si decides mantenerlo en el futuro)
-                    $('#backToTab3').show();
-                },
-                error: function() {
-                    alert('Hubo un error al procesar la solicitud.');
-                }
-            });
-        } else {
-            // Limpiar la tabla si el campo está vacío
+            // Make AJAX request if there is text in the field
+            if (search_term.length > 0){
+                $.ajax({
+                    // PHP file to process the search
+                    url: 'manage_clients_service.php',
+                    type: 'GET',
+                    // Submit search term
+                    data: { search_term: search_term },
+                    success: function(response){
+                        // Place the response (table) inside the results div
+                        $('#result_table').html(response);
+
+                        // Clean button
+                        $('#backToTab3').show();
+                    }
+                    ,
+                    error: function(){
+                        alert('Hubo un error al procesar la solicitud.');
+                    }
+                });
+            }
+            else{
+                // Clear table if field is empty
+                $('#result_table').html('');
+            }
+        });
+
+        // Handle button click to return to tab 3 (clean button)
+        $('#backToTab3').on('click', function(){
+            // Switch to tab 3
+            $("ul.tabs li").removeClass("active");
+            $("ul.tabs li:eq(2)").addClass("active");
+            $(".tab_content").hide();
+            $("#tab3").fadeIn();
+
+            // Clear the search field
+            $('#search_term').val('');
+            // Clear the results table
             $('#result_table').html('');
-        }
+
+            // Hide button
+            $(this).hide();
+        });
     });
-
-    // Manejar el clic en el botón para volver a la pestaña 3
-    $('#backToTab3').on('click', function() {
-        // Cambiar a la pestaña 3
-        $("ul.tabs li").removeClass("active");
-        $("ul.tabs li:eq(2)").addClass("active");
-        $(".tab_content").hide();
-        $("#tab3").fadeIn();
-
-        // Limpiar el campo de búsqueda y la tabla
-        $('#search_term').val(''); // Limpiar el campo de búsqueda
-        $('#result_table').html(''); // Limpiar la tabla de resultados
-
-        // Ocultar el botón
-        $(this).hide();
-    });
-});
-
-
 </script>
 
 </html>
