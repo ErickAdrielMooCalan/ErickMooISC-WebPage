@@ -285,19 +285,24 @@ border-radius: 5px;
   background-color: #ddd; /* Cambia el fondo al pasar el cursor */
 }
 
-/* Estilo para el botón de acción "Cobrar" */
-.charge_table .charge_button {
-  background-color: #f44336; /* Color de fondo del botón */
-  color: white;              /* Color del texto del botón */
-  padding: 8px 12px;         /* Espaciado interno del botón */
-  border: none;              /* Sin bordes */
-  cursor: pointer;           /* Cambiar el cursor a puntero */
-  border-radius: 5px;        /* Bordes redondeados */
+.charge_button {
+  background-color: #f44336;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
-
-/* Cambiar el color del botón al pasar el cursor */
-.charge_table .charge_button:hover {
+.charge_button:hover {
   background-color: #d32f2f;
+}
+.charge_button_disabled{
+  background-color: var(--aditional_gray-color_high);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 footer{

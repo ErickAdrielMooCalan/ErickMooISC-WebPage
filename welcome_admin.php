@@ -131,7 +131,7 @@
             <div class="tab_content main_width" id="tab3">
                 <form id="searchForm" class="searchBar">
                     <label for="search_term"><i class="fa-solid fa-magnifying-glass"></i> Buscar cliente</label>
-                        <p class="info_search"><i class="fa-solid fa-circle-info"></i> Busca a un cliente en específico por medio de su teléfono, correo o apellidos</p>
+                        <p class="info_search"><i class="fa-solid fa-circle-info"></i> Encuentra un cliento por medio de sus nombres, apellidos, teléfono o correo</p>
                     <input type="text" name="search_term" id="search_term" placeholder="Teléfono, Correo o Apellidos">
                 </form>
 
