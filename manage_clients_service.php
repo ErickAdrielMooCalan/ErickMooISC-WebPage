@@ -1,12 +1,12 @@
 <?php
-     // Database connection
-     require 'test_connection.php';
+    // Database connection
+    require 'test_connection.php';
 
     // Initialize the search variable
     $search_term = '';
     $search_query = '';
 
-    if (isset($_GET['search_term']) && !empty($_GET['search_term'])) {
+    if (isset($_GET['search_term']) && !empty($_GET['search_term'])){
         $search_term = pg_escape_string($conn, $_GET['search_term']);
 
         // Build the WHERE part to search by phone, email or last name
@@ -28,6 +28,7 @@
                 u.last_names,
                 u.email,
                 u.phone,
+                cd.id_client AS client_id, -- Añadir el id_client aquí
                 CASE
                     WHEN ad.id_admin IS NOT NULL THEN 'Administrador'
                     WHEN cd.id_client IS NOT NULL THEN 'Cliente'
@@ -66,36 +67,51 @@
                 echo '<td data-label="Tipo">' . htmlspecialchars($row['user_type']) . '</td>';
 
                 // Check if the user is an administrator
-                if ($row['user_type'] === 'Administrador'){
+                if ($row['user_type'] === 'Administrador') {
                     echo '<td data-label="Acciones"><button type="button" class="charge_button_disabled" disabled>N/A</button></td>';
-                }
-                else{
-                    echo '<td data-label="Acciones"><button type="button" class="charge_button">Cobrar</button></td>';
+                } else {
+                    echo '<td data-label="Acciones"><button type="button" class="charge_button" data-client-id="' . htmlspecialchars($row['client_id']) . '">Cobrar</button></td>'; // Cambiar a client_id
                 }
 
                 echo '</tr>';
             }
 
             echo '</table>';
-        }
-        else{
+        } else {
             echo '<p>No se encontraron usuarios con ese criterio de búsqueda.</p>';
         }
 
         // Close the connection
         pg_close($conn);
-    }
-    else{
+    } else {
         echo "<p>Error al conectar a la base de datos.</p>";
     }
 ?>
-
 
 <!-- Modal -->
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close-button">&times;</span>
-        <p>Contenido del Modal</p>
+        <h2>Solicitud de Servicio</h2>
+        <form id="serviceRequestForm" method="POST" action="insert_service_request.php">
+            <input type="hidden" id="fk_client_id" name="fk_client_id" value="">
+            <label for="service_type">Tipo de Servicio:</label>
+            <input type="text" id="service_type" name="service_type" required><br>
+
+            <label for="actions_taken">Acciones Realizadas:</label>
+            <textarea id="actions_taken" name="actions_taken" required></textarea><br>
+
+            <label for="total_cost">Costo Total:</label>
+            <input type="number" id="total_cost" name="total_cost" step="0.01" required><br>
+
+            <label for="service_date">Fecha de Servicio:</label>
+            <input type="date" id="service_date" name="service_date" required><br>
+
+            <label for="delivery_date">Fecha de Entrega:</label>
+            <input type="date" id="delivery_date" name="delivery_date"><br>
+
+            <button type="submit">Enviar</button>
+        </form>
     </div>
 </div>
 
@@ -136,30 +152,35 @@
 </style>
 
 <script>
-    // Obtener el modal
+    // Get the modal
     var modal = document.getElementById("myModal");
 
-    // Obtener el botón que abre el modal
+    // Get the button that opens the modal
     var buttons = document.querySelectorAll(".charge_button");
 
-    // Asignar evento a cada botón para abrir el modal
-    buttons.forEach(function(button) {
-        button.onclick = function() {
+    // Assign event to each button to open the modal
+    buttons.forEach(function(button){
+        button.onclick = function(){
+            // Get client ID
+            var clientId = this.getAttribute("data-client-id");
+            // Set ID to hidden field
+            document.getElementById("fk_client_id").value = clientId;
+            // Show the modal
             modal.style.display = "block";
         }
     });
 
-    // Obtener el elemento <span> que cierra el modal
+    // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close-button")[0];
 
-    // Cuando el usuario hace clic en <span> (x), cerrar el modal
-    span.onclick = function() {
+    // When the user clicks <span> (x), close the modal
+    span.onclick = function(){
         modal.style.display = "none";
     }
 
-    // Cuando el usuario hace clic en cualquier parte fuera del modal, cerrarlo
-    window.onclick = function(event) {
-        if (event.target == modal) {
+    // When the user clicks anywhere outside the modal, close it
+    window.onclick = function(event){
+        if (event.target == modal){
             modal.style.display = "none";
         }
     }
