@@ -8,11 +8,16 @@
 
     // Get form data
     $service_type = pg_escape_string($conn, $_POST['service_type']);
-    $actions_taken = pg_escape_string($conn, $_POST['actions_taken']);
+    $actions_taken = $_POST['actions_taken'];
     $total_cost = pg_escape_string($conn, $_POST['total_cost']);
     $service_date = pg_escape_string($conn, $_POST['service_date']);
-    $delivery_date = isset($_POST['delivery_date']) && !empty($_POST['delivery_date']) ? pg_escape_string($conn, $_POST['delivery_date']) : NULL; // Asignar NULL si está vacío
-    $fk_client_id = pg_escape_string($conn, $_POST['fk_client_id']); // Asegúrate de que este ID se pase correctamente desde el formulario
+    $delivery_date = isset($_POST['delivery_date']) && !empty($_POST['delivery_date']) ? pg_escape_string($conn, $_POST['delivery_date']) : NULL;
+    $fk_client_id = pg_escape_string($conn, $_POST['fk_client_id']);
+
+    // Convert actions to JSON format
+    // Separate actions by commas
+    $actions_array = explode(',', $actions_taken);
+    $actions_json = json_encode(array_map('trim', $actions_array), JSON_UNESCAPED_UNICODE); // Convertir el array a JSON sin escape de caracteres Unicode
 
     // Check if the client exists
     $check_client_query = "SELECT COUNT(*) FROM client_details WHERE id_client = '$fk_client_id'";
@@ -25,10 +30,10 @@
     $client_exists = pg_fetch_result($result, 0, 0);
 
     if ($client_exists > 0) {
-        // If the client exists, proceed with the insert
+        // If the client exists, proceed with the insertion
         $insert_query = "
             INSERT INTO service_requests (service_type, actions_taken, total_cost, service_date, delivery_date, fk_client_id)
-            VALUES ('$service_type', '$actions_taken', '$total_cost', '$service_date', " . ($delivery_date ? "'$delivery_date'" : 'NULL') . ", '$fk_client_id')
+            VALUES ('$service_type', '$actions_json', '$total_cost', '$service_date', " . ($delivery_date ? "'$delivery_date'" : 'NULL') . ", '$fk_client_id')
         ";
 
         if (pg_query($conn, $insert_query)) {

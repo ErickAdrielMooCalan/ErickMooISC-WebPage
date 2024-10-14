@@ -50,7 +50,7 @@
         <ul class="tabs main_width">
             <li><a href="#tab1"><i class="fa-solid fa-house"></i> Inicio</a></li>
             <li><a href="#tab2"><i class="fa-solid fa-pen-to-square"></i> Editar mis datos</a></li>
-            <li><a href="#tab3"><i class="fa-solid fa-cart-shopping"></i> Cobro de servicio</a></li>
+            <li><a href="#tab3"><i class="fa-solid fa-hand-holding-dollar"></i> Cobrar</a></li>
             <li><a href="#tab4"><i class="fa-solid fa-ticket"></i> Asignar cupones</a></li>
         </ul>
 
@@ -132,7 +132,7 @@
                 <form id="searchForm" class="searchBar">
                     <label for="search_term"><i class="fa-solid fa-magnifying-glass"></i> Buscar cliente</label>
                         <p class="info_search"><i class="fa-solid fa-circle-info"></i> Encuentra un cliento por medio de sus nombres, apellidos, teléfono o correo</p>
-                    <input type="text" name="search_term" id="search_term" placeholder="Teléfono, Correo o Apellidos">
+                    <input type="text" name="search_term" id="search_term" placeholder="Nombres, Apellidos, Teléfono o Correo">
                 </form>
 
                 <button id="backToTab3" style="display: none;" class="clearButtom"><i class="fa-solid fa-eraser"></i> Limpiar búsqueda</button>

@@ -83,6 +83,13 @@ CREATE TABLE service_requests (
     FOREIGN KEY (fk_client_id) REFERENCES client_details(id_client)
 );
 
+ALTER TABLE service_requests
+ALTER COLUMN actions_taken TYPE JSON USING actions_taken::JSON;
+
+ALTER TABLE service_requests
+ADD COLUMN partial_payment DECIMAL(10, 2) DEFAULT 0.00,
+ADD COLUMN total_paid DECIMAL(10, 2) DEFAULT 0.00;
+
 --admin test
 insert into users (first_name, second_name, last_names, age, email, password, fk_id_user_type)
 values ('Erick', 'Adriel', 'Moo Calan', 35, 'erick.moo.isc', '$2y$10$cSv/UmUg3bIC4GVS7BPmGOy4U9iHTZOc1uhg39YR9katA2UD3XCLm', '643dce86-c777-41c1-837e-53a6831f3d85');

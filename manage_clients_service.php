@@ -98,11 +98,14 @@
             <label for="service_type">Tipo de Servicio:</label>
             <input type="text" id="service_type" name="service_type" required><br>
 
-            <label for="actions_taken">Acciones Realizadas:</label>
+            <label for="actions_taken">Acciones Realizadas (separar por comas):</label>
             <textarea id="actions_taken" name="actions_taken" required></textarea><br>
 
             <label for="total_cost">Costo Total:</label>
             <input type="number" id="total_cost" name="total_cost" step="0.01" required><br>
+
+            <label for="partial_payment">Cantidad a Abonar:</label>
+            <input type="number" id="partial_payment" name="partial_payment" step="0.01" value="0.00" required><br>
 
             <label for="service_date">Fecha de Servicio:</label>
             <input type="date" id="service_date" name="service_date" required><br>
