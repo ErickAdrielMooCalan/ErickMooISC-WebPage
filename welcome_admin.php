@@ -129,10 +129,18 @@
             </div>
 
             <div class="tab_content main_width" id="tab3">
+                <div class="main_width pay_histoty_container">
+                    <a href="" class="history_services_button "><i class="fa-solid fa-clock-rotate-left"></i> Historial de servicios</a>
+                    <a href="" class="pending_charges_button "><i class="fa-solid fa-eye"></i> Cobros pendientes</a>
+                </div>
+
                 <form id="searchForm" class="searchBar">
-                    <label for="search_term"><i class="fa-solid fa-magnifying-glass"></i> Buscar cliente</label>
+                    <label for="search_term"><i class="fa-solid fa-dollar-sign"></i> Asignación de servicios, abonos y cupones <i class="fa-solid fa-ticket"></i></label>
                         <p class="info_search"><i class="fa-solid fa-circle-info"></i> Encuentra un cliento por medio de sus nombres, apellidos, teléfono o correo</p>
-                    <input type="text" name="search_term" id="search_term" placeholder="Nombres, Apellidos, Teléfono o Correo">
+                        <div class="search_bar_container">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" name="search_term" id="search_term" placeholder="Nombres, Apellidos, Teléfono o Correo">
+                        </div>
                 </form>
 
                 <button id="backToTab3" style="display: none;" class="clearButtom"><i class="fa-solid fa-eraser"></i> Limpiar búsqueda</button>

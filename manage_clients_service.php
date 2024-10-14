@@ -70,7 +70,7 @@
                 if ($row['user_type'] === 'Administrador') {
                     echo '<td data-label="Acciones"><button type="button" class="charge_button_disabled" disabled>N/A</button></td>';
                 } else {
-                    echo '<td data-label="Acciones"><button type="button" class="charge_button" data-client-id="' . htmlspecialchars($row['client_id']) . '">Cobrar</button></td>'; // Cambiar a client_id
+                    echo '<td data-label="Acciones"><button type="button" class="charge_button" data-client-id="' . htmlspecialchars($row['client_id']) . '"><i class="fa-solid fa-plus"></i> Asignar servicio</button> <br><br> <button type="button" class="partial_payment_form_button" data-client-id="' . htmlspecialchars($row['client_id']) . '"><i class="fa-solid fa-dollar-sign"></i> Abonar pago</button> <br><br> <button type="button" class="add_coupon_form_button" data-client-id="' . htmlspecialchars($row['client_id']) . '"><i class="fa-solid fa-ticket"></i> Asignar cupón</button></td>'; // Cambiar a client_id
                 }
 
                 echo '</tr>';

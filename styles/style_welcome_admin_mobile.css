@@ -69,5 +69,11 @@
     font-weight: 400;
     color: var(--black-color);
   }
+  .pay_histoty_container{
+    flex-direction: column;
+  }
+  .charge_button, .charge_button_disabled, .partial_payment_form_button, .add_coupon_form_button{
+    width: 200px;
+  }
 
 }
