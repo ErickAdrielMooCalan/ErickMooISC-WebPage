@@ -149,6 +149,8 @@
             <p>El mantenimiento preventivo y correctivo de los equipos informáticos es fundamental para asegurar su óptimo funcionamiento y prolongar su vida útil. El mantenimiento preventivo implica realizar acciones periódicas, como limpiar componentes, actualizar software y verificar hardware, para evitar fallas antes de que ocurran. Esto ayuda a reducir el riesgo de interrupciones, mejora el rendimiento y evita costosos daños a largo plazo.</p>
 
             <p>Por otro lado, el mantenimiento correctivo se centra en solucionar problemas cuando ya han surgido, como reparaciones de hardware o reinstalación de sistemas operativos. Actuar rápidamente en estos casos minimiza el tiempo de inactividad, reduce el impacto negativo en las operaciones y garantiza que el equipo vuelva a funcionar de manera eficiente lo antes posible. Ambos tipos de mantenimiento son vitales para mantener la confiabilidad y productividad de los sistemas informáticos.</p>
+
+            <p>Test Run by Erick Moo</p>
         </div>
     </section>
 </body>
